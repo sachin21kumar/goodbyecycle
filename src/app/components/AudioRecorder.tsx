@@ -196,7 +196,7 @@ export default function AudioRecorder({ meta }: { meta: StoryFormData }) {
           {!recording ? (
             <button onClick={startRecording} className="rounded-xl bg-[#0056b3] px-6 py-3 cursor-pointer text-white">Start recording</button>
           ) : (
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-col md:flex-row">
               {!paused ? (
                 <button onClick={pauseRecording} className="inline-flex items-center gap-2 rounded-xl border cursor-pointer px-4 py-2" disabled={timeUp}>
                   <Pause className="h-4 w-4" /> Pause
@@ -224,7 +224,7 @@ export default function AudioRecorder({ meta }: { meta: StoryFormData }) {
 
           </div>
 
-          <div className="flex justify-center gap-4">
+          <div className="flex md:flex-row flex-col justify-center gap-4">
             <button onClick={resetRecorderState} className="px-5 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition cursor-pointer">Re-record</button>
 
             <button onClick={submitStory} disabled={loading} className={`px-5 py-2 rounded-lg cursor-pointer text-white transition ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#0056b3] hover:bg-[#0056b3]"}`}>
