@@ -9,6 +9,7 @@ import { StoryFormData } from "../lib/schema";
 const STEP_KEY = "record_step";
 const META_KEY = "record_meta";
 
+
 export default function RecordPage() {
   const [step, setStep] = useState<number>(0);
   const [meta, setMeta] = useState<StoryFormData | null>(null);
