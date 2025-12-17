@@ -78,7 +78,7 @@ export default function StoryForm({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mt-8 max-w-xl rounded-2xl border bg-white p-8 shadow-sm dark:text-black"
+      className="mt-8 max-w-xl border bg-white p-8 shadow-sm dark:text-black"
     >
       <header className="mb-6">
         <h2 className="text-2xl font-semibold dark:text-black">Story details</h2>
@@ -100,7 +100,7 @@ export default function StoryForm({
                     ? "Name is required when not anonymous"
                     : false,
                 })}
-                className="w-full rounded-xl border px-10 py-2"
+                className="w-full border border-[#CCCCCC] px-10 py-2"
               />
             </div>
             {errors.name && (
@@ -110,7 +110,7 @@ export default function StoryForm({
         )}
 
         {anonymous && (
-          <p className="rounded-xl bg-yellow-50 p-3 text-sm text-yellow-800">
+          <p className=" bg-yellow-50 p-3 text-sm text-yellow-800">
             Please avoid sharing names, places, or other identifying details.
           </p>
         )}
@@ -135,7 +135,7 @@ export default function StoryForm({
                 return age >= 18 || "You must be at least 18 years old";
               },
             })}
-            className="w-full rounded-xl border px-3 py-2"
+            className="w-full  border px-3 py-2 border-[#CCCCCC]"
           />
           {errors.birthdate && (
             <p className="mt-1 text-sm text-red-600">{errors.birthdate.message}</p>
@@ -147,18 +147,18 @@ export default function StoryForm({
           <input
             type="text"
             {...register("storyTitle")}
-            className="w-full rounded-xl border px-3 py-2"
+            className="w-full  border px-3 py-2 border-[#CCCCCC]"
           />
         </div>
 
-        <label className="flex items-start gap-3 rounded-xl border p-4">
+        <label className="flex items-center gap-3  border border-[#CCCCCC] p-4">
           <input type="checkbox" {...register("anonymous")} />
           <span className="text-sm">
             Share this story <strong>anonymously</strong>
           </span>
         </label>
 
-        <label className="flex items-start gap-3 rounded-xl border p-4">
+        <label className="flex items-center gap-3  border border-[#CCCCCC] p-4">
           <input type="checkbox" {...register("transcript")} />
           <span className="text-sm">
             Email me a transcript when my story is ready
@@ -173,7 +173,7 @@ export default function StoryForm({
               <input
                 type="email"
                 {...register("email", { required: transcript })}
-                className="w-full rounded-xl border px-10 py-2"
+                className="w-full border px-10 py-2 border-[#CCCCCC]"
               />
             </div>
             {errors.email && (
@@ -183,7 +183,7 @@ export default function StoryForm({
         )}
 
         {micError && (
-          <div className="flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+          <div className="flex items-start gap-2 border border-red-200 bg-red-50 p-3 text-sm text-red-700">
             <AlertCircle className="mt-0.5 h-4 w-4" />
             {micError}
           </div>
@@ -193,7 +193,7 @@ export default function StoryForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#0056b3] cursor-pointer px-6 py-3 text-sm text-white disabled:opacity-60"
+        className="mt-6 inline-flex items-center gap-2 bg-[#e295c1] cursor-pointer px-6 py-3 text-sm text-white"
       >
         <Mic className="h-4 w-4" />
         Continue to recorder

@@ -165,7 +165,7 @@ export default function AudioRecorder({ meta }: { meta: StoryFormData }) {
 
   if (submitted) {
     return (
-      <div className="mt-8 max-w-xl rounded-2xl border bg-white p-8 shadow-sm">
+      <div className="mt-8 max-w-xl border bg-white p-8 shadow-sm">
         <div className="flex items-center gap-3 text-green-600">
           <CheckCircle className="h-6 w-6" />
           <h2 className="text-xl font-semibold">Story submitted</h2>
@@ -176,7 +176,7 @@ export default function AudioRecorder({ meta }: { meta: StoryFormData }) {
   }
   console.log(audioBlob, "audioBlob")
   return (
-    <div className="mt-8 max-w-xl rounded-2xl border bg-white p-8 shadow-sm dark:text-black">
+    <div className="mt-8 max-w-xl border bg-white p-8 shadow-sm dark:text-black">
       {!audioBlob ? (
         <div className="flex flex-col items-center gap-4">
           <div className={`flex h-28 w-28 items-center justify-center rounded-full border-4 ${recording ? "border-green-500 bg-red-50" : "border-gray-200"}`}>
@@ -194,40 +194,40 @@ export default function AudioRecorder({ meta }: { meta: StoryFormData }) {
           )}
 
           {!recording ? (
-            <button onClick={startRecording} className="rounded-xl bg-[#0056b3] px-6 py-3 cursor-pointer text-white">Start recording</button>
+            <button onClick={startRecording} className="bg-[#e295c1] px-6 py-3 cursor-pointer text-white">Start recording</button>
           ) : (
             <div className="flex gap-3 flex-col md:flex-row">
               {!paused ? (
-                <button onClick={pauseRecording} className="inline-flex items-center gap-2 rounded-xl border cursor-pointer px-4 py-2" disabled={timeUp}>
+                <button onClick={pauseRecording} className="inline-flex items-center gap-2 border cursor-pointer px-4 py-2" disabled={timeUp}>
                   <Pause className="h-4 w-4" /> Pause
                 </button>
               ) : (
-                <button onClick={resumeRecording} className="inline-flex items-center gap-2 rounded-xl border cursor-pointer px-4 py-2" disabled={timeUp}>
+                <button onClick={resumeRecording} className="inline-flex items-center gap-2 border cursor-pointer px-4 py-2" disabled={timeUp}>
                   <Play className="h-4 w-4" /> Resume
                 </button>
               )}
 
-              <button onClick={stopRecording} className="inline-flex items-center gap-2 rounded-xl bg-[#0056b3] cursor-pointer px-6 py-3 text-white">
+              <button onClick={stopRecording} className="inline-flex items-center gap-2 bg-[#e295c1] cursor-pointer px-6 py-3 text-white">
                 <Square className="h-4 w-4" /> Stop & save
               </button>
             </div>
           )}
         </div>
       ) : (
-        <div className="space-y-4 p-4 border rounded-2xl bg-gray-50 shadow-sm">
+        <div className="space-y-4 p-4 border bg-gray-50 shadow-sm">
           <div className="flex flex-col items-center gap-2">
             <audio ref={audioRef}
               controls
               src={audioBlob ? URL.createObjectURL(audioBlob) : undefined}
-              className="w-full rounded-lg"
+              className="w-full"
             />
 
           </div>
 
           <div className="flex md:flex-row flex-col justify-center gap-4">
-            <button onClick={resetRecorderState} className="px-5 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition cursor-pointer">Re-record</button>
+            <button onClick={resetRecorderState} className="px-5 py-2 border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition cursor-pointer">Re-record</button>
 
-            <button onClick={submitStory} disabled={loading} className={`px-5 py-2 rounded-lg cursor-pointer text-white transition ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#0056b3] hover:bg-[#0056b3]"}`}>
+            <button onClick={submitStory} disabled={loading} className={`px-5 py-2 cursor-pointer text-white transition ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#e295c1] hover:bg-[#e295c1]"}`}>
               {loading ? "Submitting…" : "Submit"}
             </button>
           </div>

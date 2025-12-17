@@ -10,7 +10,7 @@ export default function ConsentGate({ onNext }: { onNext: () => void }) {
   const canContinue = age && terms;
 
   return (
-    <div className="mt-8 max-w-xl rounded-2xl border bg-white p-8 shadow-sm">
+    <div className="mt-8 max-w-xl border bg-white p-8 shadow-sm">
       <header className="mb-6">
         <div className="flex items-center gap-3">
           <Lock className="h-5 w-5 text-gray-500" />
@@ -22,7 +22,7 @@ export default function ConsentGate({ onNext }: { onNext: () => void }) {
       </header>
 
       <div className="space-y-4">
-        <label className="flex cursor-pointer items-start gap-3 rounded-xl border p-4 transition hover:bg-gray-50">
+        <label className="flex cursor-pointer items-start gap-3 border p-4 transition">
           <input
             type="checkbox"
             checked={age}
@@ -34,7 +34,7 @@ export default function ConsentGate({ onNext }: { onNext: () => void }) {
           </span>
         </label>
 
-        <label className="flex cursor-pointer items-start gap-3 rounded-xl border p-4 transition hover:bg-gray-50">
+        <label className="flex cursor-pointer items-start gap-3 border p-4 transition">
           <input
             type="checkbox"
             checked={terms}
@@ -53,8 +53,8 @@ export default function ConsentGate({ onNext }: { onNext: () => void }) {
       <button
         disabled={!canContinue}
         onClick={onNext}
-        className={`mt-6 inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-medium transition ${canContinue
-            ? "bg-[#0056b3] text-white cursor-pointer hover:bg-[#0056b3]"
+        className={`mt-6 inline-flex items-center gap-2 px-6 py-3 text-sm font-medium transition ${canContinue
+            ? "bg-[#e295c1] text-white cursor-pointer"
             : "cursor-not-allowed bg-gray-200 text-gray-500"
           }`}
       >

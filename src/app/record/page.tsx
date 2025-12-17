@@ -35,8 +35,8 @@ export default function RecordPage() {
   if (!hydrated) return null;
 
   return (
-    <main className="p-10 max-w-xl mx-auto dark:text-black">
-      <h1 className="text-2xl font-bold mb-6">Record Your Mug Story</h1>
+    <main className="p-10 max-w-xl mx-auto dark:text-black font-quantico">
+      <h1 className="text-2xl font-bold mb-6 font-quantico">Record Your Mug Story</h1>
 
       {step === 0 && <ConsentGate onNext={() => setStep(1)} />}
 
